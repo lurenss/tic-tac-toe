@@ -127,6 +127,31 @@ void ia(char* game_camp){
 	while(flag);	
 
 }
+
+void game(char* game_camp){
+	if((*(game_camp+1)=='x' && *(game_camp+3)=='x' && *(game_camp+5)=='x') || (*(game_camp+8)=='x' && *(game_camp+10)=='x' && *(game_camp+12)=='x') || 
+		(*(game_camp+15)=='x' && *(game_camp+17)=='x' && *(game_camp+19)=='x') || (*(game_camp+1)=='x' && *(game_camp+8)=='x' && *(game_camp+15)=='x')
+		|| (*(game_camp+3)=='x' && *(game_camp+10)=='x' && *(game_camp+17)=='x') || (*(game_camp+5)=='x' && *(game_camp+12)=='x' && *(game_camp+19)=='x')
+		|| (*(game_camp+1)=='x' && *(game_camp+10)=='x' && *(game_camp+19)=='x') ||(*(game_camp+5)=='x' && *(game_camp+10)=='x' && *(game_camp+15)=='x'))
+
+		printf("You win\n");
+	else{
+		if((*(game_camp+1)=='o' && *(game_camp+3)=='o' && *(game_camp+5)=='o') || (*(game_camp+8)=='o' && *(game_camp+10)=='o' && *(game_camp+12)=='o') || 
+			(*(game_camp+15)=='o' && *(game_camp+17)=='o' && *(game_camp+19)=='o') || (*(game_camp+1)=='o' && *(game_camp+8)=='o' && *(game_camp+15)=='o')
+			|| (*(game_camp+3)=='o' && *(game_camp+10)=='o' && *(game_camp+17)=='o') || (*(game_camp+5)=='o' && *(game_camp+12)=='o' && *(game_camp+19)=='o')
+			|| (*(game_camp+1)=='o' && *(game_camp+10)=='o' && *(game_camp+19)=='o') ||(*(game_camp+5)=='o' && *(game_camp+10)=='o' && *(game_camp+15)=='o'))
+
+			printf("You lose\n");
+		else{
+			if(*(game_camp+1)!=' ' && *(game_camp+3)!=' ' && *(game_camp+5)!=' ' && *(game_camp+8)!=' ' && *(game_camp+10)!=' ' && *(game_camp+12)!=' '  
+				&& *(game_camp+15)!=' ' && *(game_camp+17) !=' ' && *(game_camp+19)!=' ')
+
+				printf("Draw \n"); 
+
+		}	
+	}
+}
+
 void player_move(char* game_camp){
 	char buffer[256];
 	int x,control;
@@ -148,6 +173,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+1)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}
 			case 2:
@@ -158,6 +184,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+3)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 3:
@@ -168,6 +195,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+5)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 4:
@@ -178,6 +206,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+8)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 5:
@@ -188,6 +217,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+10)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 6:
@@ -198,6 +228,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+12)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 7:
@@ -208,6 +239,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+15)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 8:
@@ -218,6 +250,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+17)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}	
 			case 9:
@@ -228,6 +261,7 @@ void player_move(char* game_camp){
 				else{
 					*(game_camp+19)='x';
 					ia(game_camp);
+					game(game_camp);
 					break;
 				}
 			default:
